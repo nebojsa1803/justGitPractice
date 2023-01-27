@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./practice.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <button id="btn1">Click Me</button>
+    </div>
+    <script>
+      const div1 = document.getElementById('div1')
+      const btn1 = document.getElementById('btn1')
+      window.onload = function () {
+        btn1.addEventListener('click', btnClick, true)
+        div1.addEventListener('click', divClick, true)
+        //true ce uciniti da capturing krene,
+        //od vrha ka dnu, capturing
+      }
+      function divClick() {
+        alert('DIV IS CLICKED')
+      }
+      function btnClick() {
+        event.stopPropagation()
+        alert('BUTTON IS CLIKED')
+      }
+    </script>
+  </body>
+</html>
